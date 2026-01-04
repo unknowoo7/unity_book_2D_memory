@@ -1,24 +1,20 @@
 using UnityEngine;
 
-namespace Scenes.Scripts
+public class MemoryCard : MonoBehaviour
 {
-    public class MemoryCard : MonoBehaviour
+    [SerializeField] private GameObject cardBack;
+    [SerializeField] private SceneController controller;
+
+    public int Id { get; private set; }
+
+    private void OnMouseDown()
     {
-        public void OnMouseDown()
-        {
-            Debug.Log("OnMouseDown");
-        }
+        if (cardBack.activeSelf) cardBack.SetActive(false);
+    }
 
-        // Start is called once before the first execution of Update after the MonoBehaviour is created
-        void Start()
-        {
-        
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-        
-        }
+    public void SetCard(int id, Sprite img)
+    {
+        Id = id;
+        GetComponent<SpriteRenderer>().sprite = img;
     }
 }
