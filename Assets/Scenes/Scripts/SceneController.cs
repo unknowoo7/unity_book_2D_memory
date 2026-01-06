@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class SceneController : MonoBehaviour
@@ -10,6 +11,46 @@ public class SceneController : MonoBehaviour
     [SerializeField] private MemoryCard originalCard;
     [SerializeField] private Sprite[] images;
 
+    private MemoryCard firstRevealed;
+    private MemoryCard secondRevealed;
+    private int score = 0;
+
+    public bool canReval
+    {
+        get { return secondRevealed != null; }
+    }
+
+    public void CardRevealed(MemoryCard card)
+    {
+        if (firstRevealed == null)
+        {
+            firstRevealed = card;
+        }
+        else
+        {
+            secondRevealed = card;
+            StartCoroutine(CheckMatch());
+        }
+    }
+    
+    private IEnumerator CheckMatch()
+    {
+        if (firstRevealed.Id == secondRevealed.Id)
+        {
+            score++;
+            Debug.Log($"Score: {score}");
+        }
+        else
+        {
+            yield return new WaitForSeconds(.5f);
+            
+            firstRevealed.Unreveal();
+            secondRevealed.Unreveal();
+        }
+        
+        firstRevealed = null;
+        secondRevealed = null;
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
