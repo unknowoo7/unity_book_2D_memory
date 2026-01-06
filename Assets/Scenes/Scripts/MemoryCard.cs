@@ -1,20 +1,31 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class MemoryCard : MonoBehaviour
 {
-    [SerializeField] private GameObject cardBack;
-    [SerializeField] private SceneController controller;
+    [SerializeField] GameObject cardBack;
+    [SerializeField] SceneController controller;
 
-    public int Id { get; private set; }
+    private int _id;
 
-    private void OnMouseDown()
+    public int Id
     {
-        if (cardBack.activeSelf) cardBack.SetActive(false);
+        get { return _id; }
     }
-
+    
     public void SetCard(int id, Sprite img)
     {
-        Id = id;
+        _id = id;
         GetComponent<SpriteRenderer>().sprite = img;
+    }
+
+    public void OnMouseDown()
+    {
+        if (cardBack.activeSelf)
+        {
+            cardBack.SetActive(false);
+        }
     }
 }
