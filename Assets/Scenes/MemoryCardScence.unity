@@ -357,8 +357,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1932288244}
   - component: {fileID: 1932288243}
-  - component: {fileID: 1932288247}
-  - component: {fileID: 1932288246}
+  - component: {fileID: 1932288248}
+  - component: {fileID: 1932288249}
   m_Layer: 0
   m_Name: Memory Card
   m_TagString: Untagged
@@ -441,7 +441,7 @@ Transform:
   - {fileID: 12055940}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1932288246
+--- !u!114 &1932288248
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -452,10 +452,10 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d4de7c1dc40a0d43824ee5bd7e6afa4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Scenes.Scripts.MemoryCard
+  m_EditorClassIdentifier: Assembly-CSharp::MemoryCard
   cardBack: {fileID: 12055939}
   controller: {fileID: 2052975451}
---- !u!61 &1932288247
+--- !u!61 &1932288249
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -489,7 +489,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.0029998422}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -499,7 +499,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.5, y: 2}
+  m_Size: {x: 2.153967, y: 2.557972}
   m_EdgeRadius: 0
 --- !u!1 &2052975450
 GameObject:
@@ -512,7 +512,7 @@ GameObject:
   - component: {fileID: 2052975452}
   - component: {fileID: 2052975451}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -530,7 +530,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acfd38b21af2b9a4baacc39c5759feb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneController
-  originalCard: {fileID: 1932288246}
+  originalCard: {fileID: 1932288248}
   images:
   - {fileID: -6021835855328035415, guid: 4ec63f5b86e497d40bab8f31a6071557, type: 3}
   - {fileID: -2349995688159347115, guid: a883715ed8a92c744ae24cc4ca0f54e5, type: 3}
