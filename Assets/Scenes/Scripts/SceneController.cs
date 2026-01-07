@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class SceneController : MonoBehaviour
@@ -34,6 +35,11 @@ public class SceneController : MonoBehaviour
             StartCoroutine(CheckMatch());
         }
     }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene("MemoryCardScence");
+    }
     
     private IEnumerator CheckMatch()
     {
@@ -53,8 +59,7 @@ public class SceneController : MonoBehaviour
         firstRevealed = null;
         secondRevealed = null;
     }
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    
     private void Start()
     {
         Vector3 startPos = originalCard.transform.position;
@@ -86,8 +91,7 @@ public class SceneController : MonoBehaviour
             }
         }
     }
-
-
+    
     private int[] ShuffleArray(int[] numbers)
     {
         int[] newArray = numbers.Clone() as int[];
